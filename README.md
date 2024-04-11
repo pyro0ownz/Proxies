@@ -54,3 +54,5 @@ The scanner takes each proxy and port from the list, resets the last two octets 
 Ensure Python is added to your system's PATH during installation. This makes it accessible from the terminal or command prompt.
 
 By following these steps, you can set up the Proxy Range Scanner and potentially discover a vast number of new proxies within specified IP ranges.
+
+![Results](results.jpg)
