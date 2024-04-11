@@ -26,7 +26,7 @@ Install requests and SOCKS support via pip by running:
 pip install requests[socks]
 This command installs both requests and PySocks (for SOCKS proxy support).
 
-Assuming you are using a recent version of Python (3.3 or later), you only need to install tqdm. Here’s how to do it step by step:
+Assuming you are using a recent version of Python (3.3 or later), you also need to install tqdm. Here’s how to do it step by step:
 
 Open your terminal or command prompt.
 
@@ -36,8 +36,6 @@ pip install tqdm
 Verifying the Installation
 To verify that tqdm is installed correctly, you can run the following command in your terminal or command prompt:
 
-bash
-Copy code
 python -c "import tqdm; print(tqdm.__version__)"
 
 concurrent.futures:
