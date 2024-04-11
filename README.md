@@ -1,52 +1,43 @@
-# Proxies
-Proxy Range Scanner
-The way this one works is you have two ways to do this, You google socks 5 proxies and generate a list with proxy:port 
-Then you run the script and it will ask you where the location is
-Then it will ask you if you want to use a custom port. 
-so you can scan those ranges on either a custom port or you can scan them on the port the proxy was found.
+#Proxy Range Scanner
+The Proxy Range Scanner is designed to find additional proxies within Class B IP ranges, based on a list of known good proxies. This scanner is unique because it exploits the likelihood of finding additional proxies within the same range as an already known good proxy.
 
-Explaination: 
-This was made to scan class b ranges in order to find more proxies based on a list that already has good ones. the way this scanner works is different than 
-other range scanners because if the proxy exists on the range chances are there are others. It will take the proxy and port and the use the port and strip out 
-the last two octets change them to zeros and scan them to .255.255 on the port the proxy belongs too. It will also go through the whole list but you may end up 
-with a giant list of proxies as i found thousands in a couple days. I will be including the tester with the scanner. 
+How It Works
+Start with a list of proxies: Obtain a list of SOCKS5 proxies in the proxy:port format.
+Run the scanner: The scanner will prompt for the file location of the proxy list.
+Specify the port: Decide whether to scan using a custom port or the proxy's original port.
+The scanner takes each proxy and port from the list, resets the last two octets to zero, and scans the entire range up to .255.255 on the respective port. This method can potentially uncover thousands of proxies.
 
-For the updated proxy testing script, you need the following Python libraries:
-
-requests: For sending HTTP/HTTPS requests, and with SOCKS support if you install requests[socks].
-concurrent.futures: This is part of the standard Python library (no separate installation needed) and is used for concurrent execution. You also need tqdm for the scanner.
-Here’s how you can install the necessary libraries:
-
-requests with SOCKS support:
-
-Open your terminal (Command Prompt or PowerShell on Windows, Terminal on macOS or Linux).
-
-Install requests and SOCKS support via pip by running:
-
+Requirements
+Python 3.3 or later.
+Libraries:
+requests (with SOCKS support)
+concurrent.futures (included in the standard Python library)
+tqdm
+Installation
+Requests with SOCKS Support
+Open a terminal or command prompt.
+Install requests with SOCKS support using pip:
+bash
+Copy code
 pip install requests[socks]
-This command installs both requests and PySocks (for SOCKS proxy support).
-
-Assuming you are using a recent version of Python (3.3 or later), you also need to install tqdm. Here’s how to do it step by step:
-
+This installs requests and PySocks.
+tqdm
 Open your terminal or command prompt.
-
-Run the installation command for tqdm:
-
+Install tqdm using pip:
+bash
+Copy code
 pip install tqdm
 Verifying the Installation
-To verify that tqdm is installed correctly, you can run the following command in your terminal or command prompt:
+To check if tqdm is installed correctly, execute:
+bash
+Copy code
+python -c "import tqdm; print(tqdm.version)"
+To verify requests and concurrent.futures, run:
+bash
+Copy code
+python -c "import requests, concurrent.futures; print('requests:', requests.version)"
+This confirms the requests library version. Since concurrent.futures is part of the standard library, its presence confirms a successful setup.
+Note
+Ensure Python is added to your system's PATH during installation. This makes it accessible from the terminal or command prompt.
 
-python -c "import tqdm; print(tqdm.__version__)"
-
-concurrent.futures:
-
-This is included with Python, so there's no need to install it separately if you are using Python 3.2 or later. For older versions of Python (2.x or <= 3.1), you need to upgrade to a newer Python version to use concurrent.futures.
-Installation Instructions
-If you haven’t installed Python, download it from python.org and follow the installation process. Make sure to check the option to 'Add Python to PATH' during the installation on Windows.
-Open a terminal or command prompt.
-Use pip to install the requests[socks] package as shown above.
-Verifying the Installation
-To check if the libraries are installed correctly, you can run the following command in your terminal or command prompt:
-
-python -c "import requests, concurrent.futures; print('requests:', requests.__version__)"
-This command should display the version of the requests library, confirming that it is installed. Since concurrent.futures is part of the standard library, if this command runs without error, it's installed correctly. If you're using a version of Python that includes concurrent.futures (Python 3.2 and above), there should be no issues with this library.
+By following these steps, you can set up the Proxy Range Scanner and potentially discover a vast number of new proxies within specified IP ranges.
