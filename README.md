@@ -3,6 +3,7 @@ Proxy Range Scanner
 The way this one works is you have two ways to do this, You google socks 5 proxies and generate a list with proxy:port 
 Then you run the script and it will ask you where the location is
 Then it will ask you if you want to use a custom port. 
+so you can scan those ranges on either a custom port or you can scan them on the port the proxy was found.
 
 Explaination: 
 This was made to scan class b ranges in order to find more proxies based on a list that already has good ones. the way this scanner works is different that 
