@@ -6,7 +6,7 @@ Then it will ask you if you want to use a custom port.
 so you can scan those ranges on either a custom port or you can scan them on the port the proxy was found.
 
 Explaination: 
-This was made to scan class b ranges in order to find more proxies based on a list that already has good ones. the way this scanner works is different that 
+This was made to scan class b ranges in order to find more proxies based on a list that already has good ones. the way this scanner works is different than 
 other range scanners because if the proxy exists on the range chances are there are others. It will take the proxy and port and the use the port and strip out 
 the last two octets change them to zeros and scan them to .255.255 on the port the proxy belongs too. It will also go through the whole list but you may end up 
 with a giant list of proxies as i found thousands in a couple days. I will be including the tester with the scanner. you have to modify the path inside the code 
