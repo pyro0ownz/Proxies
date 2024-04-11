@@ -14,7 +14,7 @@ with a giant list of proxies as i found thousands in a couple days. I will be in
 For the updated proxy testing script, you need the following Python libraries:
 
 requests: For sending HTTP/HTTPS requests, and with SOCKS support if you install requests[socks].
-concurrent.futures: This is part of the standard Python library (no separate installation needed) and is used for concurrent execution.
+concurrent.futures: This is part of the standard Python library (no separate installation needed) and is used for concurrent execution. You also need tqdm for the scanner.
 Here’s how you can install the necessary libraries:
 
 requests with SOCKS support:
